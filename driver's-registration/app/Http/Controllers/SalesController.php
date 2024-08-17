@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Driver;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class SalesController extends Controller
 {
@@ -10,6 +13,25 @@ class SalesController extends Controller
         return view('SalesOfficer.driver_registration');
     }
     public function driver_form(Request $request){
-        
+        $driver=new Driver;
+        $driver->vehicle_name=$request->vname;
+        $driver->vehicle_type=$request->type;
+        $driver->driver_name=$request->dname;
+        $driver->driver_phone_number=$request->dnum;
+        $driver->driver_email=$request->dmail;
+        $driver->gender=$request->gender;
+        $driver->user_id=Auth::user()->id;
+        $plate_number=$request->pnum;
+       if(Driver::where('plate_number',$plate_number)->exists()){
+        return redirect()->back()->with('alert',' plate number aleady registered ');
+
+       }
+       else{
+            $driver->plate_number=$request->pnum;
+            $driver->save();
+            return redirect()->back()->with('success','Driver registered successfully');
+       }
+            
+       
     }
 }

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adika Driver's Registration</title>
     <link rel="stylesheet" href="home/styles.css" />
-
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     
     <link rel="icon" href="images/logo (1).png" type="image/icon type">
     <link
@@ -50,8 +50,22 @@
 <div class="main_section">
     <div class="form_container">
       
-        <form action="{{url('/driver_form')}}" method="post">
+        <form action="{{url('driver_form')}}" method="post">
         @csrf
+       
+        
+          @if (session()->has('success'))
+          <div class="alert alert-success" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><spa aria-hidden="true">X</button>
+            {{ session()->get('success') }}
+        </div>
+        @elseif (session()->has('alert'))
+        <div class="alert alert-danger" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><spa aria-hidden="true">X</button>
+          {{ session()->get('alert') }}
+      </div>
+          @endif
+      
         <h1 class="title">
             Driver's Registration Form
         </h1>
@@ -74,11 +88,12 @@
                     Vehicle Type
                 </label>
                 <select name="type" id="type">
-             
-                    <option value="">Toyota</option>
-                    <option value="">Suzuki</option>
-                    <option value="">Hyundai</option>
-                    <option value="">Other</option>
+                    <optgroup label="Automobile">
+                    <option value="toyota">Toyota</option>
+                    <option value="Suzuki">Suzuki</option>
+                    <option value="Hyundai">Hyundai</option>
+                </optgroup>
+                    <option value="Other">Other</option>
                 
                 </select>
             </div>
@@ -105,9 +120,9 @@
                     Gender
                 </span>
                 <div class="gender-category">
-                    <input type="radio" name="male" id="">
+                    <input type="radio" name="gender" id="">
                     <label for="">Male</label>
-                    <input type="radio" name="female" id="">
+                    <input type="radio" name="gender" id="">
                     <label for="">Female</label>
                 </div>
             </div>
