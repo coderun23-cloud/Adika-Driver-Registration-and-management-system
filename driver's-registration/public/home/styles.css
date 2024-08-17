@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
     box-sizing: border-box;
     margin: 0;
@@ -300,6 +303,7 @@
   #main__img {
     height: 80%;
     width: 80%;
+    margin-left: 10rem;
   }
   
   /* Mobile Responsive */

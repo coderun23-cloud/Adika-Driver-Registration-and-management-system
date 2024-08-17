@@ -1,0 +1,138 @@
+.main_section{
+    display: flex;
+justify-content: center;
+align-items: center;
+width: 100%;
+}
+.form_container{
+
+width: 100%;
+padding: 28px;
+margin: 0 28px;
+border-radius: 10px;
+box-shadow: inset -2px 2px 2px white;
+}
+.title{
+font-size: 35px;
+font-weight: bold;
+text-align: center;
+padding-bottom: 15px;
+color: rgb(0, 0, 0);
+text-shadow: 2px 2px 2px rgb(255, 255, 255);
+border-bottom: solid 1px rgb(0, 0, 0);
+
+}
+.user_details{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+padding: 20px 0; 
+
+}
+.input_box:nth-child(2n){
+justify-content: end;
+}
+.input_box{
+display: flex;
+flex-wrap: wrap;
+width: 50%;
+padding-bottom: 15px;
+}
+.input_box input::placeholder{
+opacity: 0.7;
+}
+.input_box label{
+width: 95%;
+color: rgb(0, 0, 0);
+font-size:24px;
+font-weight: 600;
+margin: 5px 0; 
+}
+.input_box input{
+height: 50px;
+width: 95%;
+border-radius: 7px;
+outline: none;
+border: 1px solid gray;
+padding: 0 12px;
+}
+.gender-title{
+color: black;
+font-size: 24px;
+font-weight: 600;
+border-bottom: 1px solid black;
+}
+.gender-category{
+margin: 15px 0;
+color: black;
+}
+.gender-category label{
+padding: 0 20px 0 5px;
+}
+.gender-category label,
+.gender-category input,
+.form-submit-btn input{
+cursor: pointer;
+}
+input[type="submit"]{
+margin-top: 40px;
+}
+input[type="submit"]{
+display: block;
+margin: auto;
+width: 35%;
+margin-top: 10px;
+font-size: 23px;
+padding: 10px;
+border: none;
+border-radius: 3px;
+color:white;
+background:black;
+border-radius: 18px;
+font-weight: 600;
+letter-spacing: 1px;
+}
+input[type="submit"]:hover{
+background:rgb(124, 122, 122);
+color: rgb(0, 0, 0);
+
+}
+#type{
+margin-right: 580px;
+border-radius: 10px;
+height: 50px;
+}
+@media(max-width:600px){
+.form_container{
+min-width: 280px;
+}
+.input_box{
+margin-bottom: 12px;
+width: 100%;
+}
+.input_box:nth-child(2n){
+justify-content: space-between;
+}
+.gender-category{
+display: flex;
+justify-content:space-between;
+width: 100%;
+}
+.user_details{
+max-height: 380px;
+overflow: auto;
+}
+.user_details::-webkit-scrollbar{
+width: 0;
+}
+}
+.footer__container {
+background-color: #141414;
+padding: 5rem 0;
+display: flex;
+flex-direction: column;
+justify-content:space-between;
+align-items: center;
+width: 100%;
+}
+

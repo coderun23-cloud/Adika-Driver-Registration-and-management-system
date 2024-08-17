@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adika Driver's Registration</title>
     <link rel="stylesheet" href="home/styles.css" />
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+
+    
     <link rel="icon" href="images/logo (1).png" type="image/icon type">
     <link
       rel="stylesheet"
@@ -20,6 +21,7 @@
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="sales/register.css">
   </head>
   <body>
     <!-- Navbar Section -->
@@ -44,40 +46,88 @@
           <li class="navbar__btn"><x-app-layout></x-app-layout></li>
       </div>
     </nav>
-
-    <!-- Hero Section -->
-    <div class="main">
+    <!--form-->
+<div class="main_section">
+    <div class="form_container">
       
-      <div class="main__container">
-        <div class="main__content">
-          <h1>ADIKA TAXI SERVICE</h1>
-          <h2>DRIVER'S REGISTARTION SITE</h2>
-          <p>See what makes up different.</p>
-          <button class="main__btn"><a href="{{url('/driver_registration')}}">Get Started</a></button>
-        </div>
-        <div class="main__img--container">
-          <img id="main__img" src="images/pic1.svg" />
-        </div>
-      </div>
-    </div>
-
-    <!-- Services Section -->
-    <div class="services">
-      <h1>See what the hype is about</h1>
-      <div class="services__container">
-        <div class="services__card">
-          <h2>Each Mile With a Smile</h2>
-          <p>Join Us</p>
+        <form action="{{url('/driver_form')}}" method="post">
+        @csrf
+        <h1 class="title">
+            Driver's Registration Form
+        </h1>
+        <div class="user_details">
+            <div class="input_box">
+                <label class="details">
+                    Vehicle Name
+                </label>
+                <input type="text" name="vname" id="" placeholder="enter the vehicle name" required>
+            </div>
+        
+            <div class="input_box">
+                <label class="details">
+                    Plate Number
+                </label>
+                <input type="number" name="pnum" id="" placeholder="enter the plate number" required>
+            </div>
+            <div class="input_box">
+                <label class="details">
+                    Vehicle Type
+                </label>
+                <select name="type" id="type">
+             
+                    <option value="">Toyota</option>
+                    <option value="">Suzuki</option>
+                    <option value="">Hyundai</option>
+                    <option value="">Other</option>
+                
+                </select>
+            </div>
+            <div class="input_box">
+                <label class="details">
+                    Driver's Name
+                </label>
+                <input type="text" name="dname" id="" placeholder="enter the driver's name" required>
+            </div>
+            <div class="input_box">
+                <label class="details">
+                    Driver's Phone Number
+                </label>
+                <input type="number" name="dnum" id="" placeholder="enter the driver's phone number" required>
+            </div>
+            <div class="input_box">
+                <label class="details">
+                    Driver's Email
+                </label>
+                <input type="email" name="dmail" id="" placeholder="enter the driver's email" required>
+            </div>
+            <div class="gender-details-box">
+                <span class="gender-title">
+                    Gender
+                </span>
+                <div class="gender-category">
+                    <input type="radio" name="male" id="">
+                    <label for="">Male</label>
+                    <input type="radio" name="female" id="">
+                    <label for="">Female</label>
+                </div>
+            </div>
             
-          <button>Get Started</button>
         </div>
-        <div class="services__card">
-          <h2>Are you Ready?</h2>
-          <p>Take the leap</p>
-          <button>Get Started</button>
-        </div>
-      </div>
+        <div class="form-submit-tbn" >
+                <input  type="submit" value="REGISTER">
+              </div>
+        </form>
     </div>
+</div>
+
+
+
+
+
+
+
+    
+  
 
     <!-- Footer Section -->
     <div class="footer__container">
@@ -92,7 +142,7 @@
           <div class="footer__link--items">
             <h2>Contact Us</h2>
             <a href="/">Contact</a> <a href="/">Contact:7000</a>
-            <a href="/">Address:Bloom Tower, Addis Ababa, Ethiopia</a> Email:contact@adikataxi.com <a href="/"></a>
+            <a href="/">Address:Bloom Tower, Addis Ababa, Ethiopia</a> <a href="/"> Email:contact@adikataxi.com</a>
           </div>
         </div>
         <div class="footer__link--wrapper">
