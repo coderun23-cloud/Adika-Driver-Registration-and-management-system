@@ -8,7 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adika Driver's Registration</title>
     <link rel="stylesheet" href="home/styles.css" />
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    
     <link rel="icon" href="images/logo (1).png" type="image/icon type">
     <link
       rel="stylesheet"
@@ -20,12 +21,14 @@
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="sales/record.css">
+ 
   </head>
   <body>
     <!-- Navbar Section -->
     <nav class="navbar">
       <div class="navbar__container">
-     <a href="/" id="navbar__logo"><i class="">   <img src="images/logo (1).png" alt=""></i></a>
+        <a href="/" id="navbar__logo"><i class="">   <img src="images/logo (1).png" alt=""></i></a>
         
         <div class="navbar__toggle" id="mobile-menu">
           <span class="bar"></span> <span class="bar"></span>
@@ -44,40 +47,40 @@
           <li class="navbar__btn"><x-app-layout></x-app-layout></li>
       </div>
     </nav>
+<!--Card section-->
 
-    <!-- Hero Section -->
-    <div class="main">
-      
-      <div class="main__container">
-        <div class="main__content">
-          <h1>ADIKA TAXI SERVICE</h1>
-          <h2>DRIVER'S REGISTARTION SITE</h2>
-          <p>See what makes up different.</p>
-          <button class="main__btn"><a href="{{url('/driver_registration')}}">Get Started</a></button>
-        </div>
-        <div class="main__img--container">
-          <img id="main__img" src="images/pic1.svg" />
-        </div>
-      </div>
+<h1 class="h1">TOTAL REGIESTERED DRIVERS</h1>
+
+@if (session()->has('success'))
+<div class="alert alert-success" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><spa aria-hidden="true">X</button>
+  {{ session()->get('success') }}
+</div>
+
+@endif
+   
+<div class="column-container">  
+    @foreach ($data as $data )
+    <div class="column">
+   
+      <div class="card">
+        <h1 class="h1">Driver's Information</h1>
+        <h3>Vechile Name:{{$data->vehicle_name}}</h3>
+        <h3>Vechile Type:{{$data->vehicle_type}}</h3>
+        <h3>Plate Number:{{$data->plate_number}}</h3>
+        <h3>Driver's Name:{{$data->driver_name}}</h3>
+        <h3>Phone Number:{{$data->driver_phone_number}}</h3>
+        <h3>Driver's Email:{{$data->driver_email}}</h3>
+        <h3>Gender:{{$data->gender}}</h3>
+    </div>
     </div>
 
-    <!-- Services Section -->
-    <div class="services">
-      <h1>See what the hype is about</h1>
-      <div class="services__container">
-        <div class="services__card">
-          <h2>Each Mile With a Smile</h2>
-          <p>Join Us</p>
-            
-          <button>Get Started</button>
-        </div>
-        <div class="services__card">
-          <h2>Are you Ready?</h2>
-          <p>Take the leap</p>
-          <button>Get Started</button>
-        </div>
-      </div>
-    </div>
+ 
+    @endforeach
+  </div>
+
+
+
 
     <!-- Footer Section -->
     <div class="footer__container">
@@ -92,7 +95,7 @@
           <div class="footer__link--items">
             <h2>Contact Us</h2>
             <a href="/">Contact</a> <a href="/">Contact:7000</a>
-            <a href="/">Address:Bloom Tower, Addis Ababa, Ethiopia</a> Email:contact@adikataxi.com <a href="/"></a>
+            <a href="/">Address:Bloom Tower, Addis Ababa, Ethiopia</a> <a href="/"> Email:contact@adikataxi.com</a>
           </div>
         </div>
         <div class="footer__link--wrapper">

@@ -10,6 +10,10 @@ Route::get('/', function () {
 Route::get('/index',[HomeController::class,'index']);
 Route::get('/driver_registration',[SalesController::class,'driver_registration']);
 Route::post('/driver_form',[SalesController::class,'driver_form']);
+Route::get('/records',[SalesController::class,'records']);
+Route::post('/search',[SalesController::class,'search']);
+Route::get('/search_page',[SalesController::class,'search_page']);
+
 
 Route::middleware([
     'auth:sanctum',

@@ -27,7 +27,7 @@
     <!-- Navbar Section -->
     <nav class="navbar">
       <div class="navbar__container">
-        <a href="/" id="navbar__logo"><i class="fas fa-gem"></i>ADIKA</a>
+        <a href="/" id="navbar__logo"><i class="">   <img src="images/logo (1).png" alt=""></i></a>
         
         <div class="navbar__toggle" id="mobile-menu">
           <span class="bar"></span> <span class="bar"></span>
@@ -120,9 +120,9 @@
                     Gender
                 </span>
                 <div class="gender-category">
-                    <input type="radio" name="gender" id="">
+                    <input type="radio" name="gender" id="" value="male">
                     <label for="">Male</label>
-                    <input type="radio" name="gender" id="">
+                    <input type="radio" name="gender" id="" value="male">
                     <label for="">Female</label>
                 </div>
             </div>
@@ -176,7 +176,7 @@
       <section class="social__media">
         <div class="social__media--wrap">
           <div class="footer__logo">
-            <a href="/" id="footer__logo"><i class="fas fa-gem"></i>ADIKA</a>
+            <a href="/" id="navbar__logo"><i class="">   <img src="images/logo (1).png" alt=""></i></a>
           </div>
           <p class="website__rights">© Adika 2024. All rights reserved</p>
           <div class="social__icons">

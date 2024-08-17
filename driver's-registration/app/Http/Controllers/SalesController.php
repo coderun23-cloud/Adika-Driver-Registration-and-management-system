@@ -34,4 +34,21 @@ class SalesController extends Controller
             
        
     }
+    public function records(){
+      $id=Auth::user();
+      $data=Driver::where('user_id',$id->id)->orderby('id','desc')->get();
+        return view('SalesOfficer.records',compact('data'));
+    }
+   
+    public function search(Request $request){
+      
+        $data=Driver::where('vehicle_name','LIKE','%'.$request->search.'%')->orwhere('driver_name','LIKE','%'.$request->search.'%')->orwhere('plate_number','LIKE','%'.$request->search.'%')->orwhere('driver_phone_number','LIKE','%'.$request->search.'%')->get();
+        if(count($data) == 0){
+            return redirect()->back()->with('success','No result was found');
+    
+         }
+         else{
+            return view('SalesOfficer.search_page',compact('data'))->with('success','The search results below');
+         }
+    }   
 }
