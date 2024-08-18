@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adika Driver's Registration</title>
     <link rel="stylesheet" href="home/styles.css" />
-    <link rel="icon" href="images/logo (1).png" type="image/icon type">
+    <link rel="icon" href="https://adikataxi.com/assets/img/favicon.png" sizes="20x20" type="image/png">
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
@@ -19,6 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+  
   </head>
   <body>
     <!-- Navbar Section -->
@@ -31,13 +32,13 @@
         </div>
         <ul class="navbar__menu">
           <li class="navbar__item">
-            <a href="/" class="navbar__links">Home</a>
+            <a href="{{url('/')}}" class="navbar__links">HOME</a>
           </li>
           <li class="navbar__item">
-            <a href="/tech.html" class="navbar__links">ContactUs</a>
+            <a href="{{url('/contact')}}" class="navbar__links">CONTACTUS</a>
           </li>
           <li class="navbar__item">
-            <a href="/" class="navbar__links">About</a>
+            <a href="{{url('/about')}}" class="navbar__links">ABOUT</a>
           </li>
           <li class="navbar__btn"><a href="{{route('login')}}" class="button">Sign In</a></li>
         </ul>
@@ -45,17 +46,19 @@
     </nav>
 
     <!-- Hero Section -->
-    <div class="main">
+    <div class="main" style="background-image: url('https://adikataxi.com/assets/img/others/taxi1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;">
       <div class="main__container">
         <div class="main__content">
-          <h1>ADIKA TAXI SERVICE</h1>
-          <h2>DRIVER'S REGISTARTION SITE</h2>
-          <p>See what makes up different.</p>
+          <h1 style="font-size: 3rem;">ADIKA TAXI SERVICE</h1>
+          <h2 style="font-size: 2rem;">DRIVER'S <span style="color: red">REGISTARTION</span> SITE</h2>
+        
           <button class="main__btn"><a href="{{route('register')}}">Get Started</a></button>
         </div>
-        <div class="main__img--container">
-          <img id="main__img" src="images/pic1.svg" />
-        </div>
+       
       </div>
     </div>
 
@@ -76,6 +79,36 @@
         </div>
       </div>
     </div>
+    <div class="services">
+      <h1>Our Service</h1>
+      <div class="services__container">
+        <div class="services__card" style="background-color:rgb(171, 171, 171); background-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(255, 255, 255, 1) 100%
+        ),
+        url('/images/taxihail.png');">
+          <h2 style="color:black; font-weight:bold;">Taxi Hailing</h2>
+          <p style="color:black; font-weight:bold;">Join Us</p>
+            
+          <button>Get Started</button>
+        </div>
+        <div class="services__card" style="background-color:rgb(171, 171, 171); background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(255, 255, 255, 1) 100%
+      ),
+      url('/images/deli.png');">
+          <h2 style="color:black; font-weight:bold;">Delivery Service</h2>
+          <p style="color:black; font-weight:bold;">Make Your First Delivery</p>
+          <button>Get Started</button>
+        </div>
+      </div>
+    </div>
+
+
+
+
 
     <!-- Footer Section -->
     <div class="footer__container">
@@ -90,7 +123,7 @@
           <div class="footer__link--items">
             <h2>Contact Us</h2>
             <a href="/">Contact</a> <a href="/">Contact:7000</a>
-            <a href="/">Address:Bloom Tower, Addis Ababa, Ethiopia</a> Email:contact@adikataxi.com <a href="/"></a>
+            <a href="/">Address:Bloom Tower, Addis Ababa, Ethiopia</a> <a href="/">Email:contact@adikataxi.com</a>
           </div>
         </div>
         <div class="footer__link--wrapper">

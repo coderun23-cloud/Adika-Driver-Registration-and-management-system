@@ -10,7 +10,7 @@
   
   .navbar {
     background: #131313;
-    height: 100px;
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,6 +61,7 @@
   
   .navbar__item {
     height: 80px;
+    font-weight: bold;
   }
   
   .navbar__links {
@@ -213,7 +214,7 @@
     justify-self: center;
     margin: 0 auto;
     height: 90vh;
-    background-color: #131313;
+    background-color:transparent;
     z-index: 1;
     width: 100%;
     max-width: 1300px;
@@ -227,10 +228,12 @@
   }
   
   .main__content h1 {
-    font-size: 4rem;
-    background-color: #ff8177;
-    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+    font-size: 3rem;
+    background-color: #ffffff;
+    padding-bottom: 20px;  
     background-size: 100%;
+    text-align: center;
+    font-weight: bolder;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -238,10 +241,11 @@
   }
   
   .main__content h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-top: 10px;
-    background-color: #ff8177;
-    background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+    background-color: #cd0000;
+    font-weight: bolder;
+    margin-left: 170px;
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -265,6 +269,7 @@
     margin-top: 2rem;
     cursor: pointer;
     position: relative;
+    margin-left: 170px;
     transition: all 0.35s;
     outline: none;
   }

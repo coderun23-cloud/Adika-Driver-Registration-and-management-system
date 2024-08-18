@@ -12,6 +12,13 @@ class SalesController extends Controller
     public function driver_registration(){
         return view('SalesOfficer.driver_registration');
     }
+    public function contact(){
+        return view('SalesOfficer.contact');
+    }
+    public function about(){
+        return view('SalesOfficer.about');
+    }
+    
     public function driver_form(Request $request){
         $driver=new Driver;
         $driver->vehicle_name=$request->vname;
@@ -36,14 +43,22 @@ class SalesController extends Controller
     }
     public function records(){
       $id=Auth::user();
-      $data=Driver::where('user_id',$id->id)->orderby('id','desc')->get();
+      $data=Driver::where('user_id',$id->id)->orderby('id','asc')->get();
         return view('SalesOfficer.records',compact('data'));
     }
    
     public function search(Request $request){
-      
-        $data=Driver::where('vehicle_name','LIKE','%'.$request->search.'%')->orwhere('driver_name','LIKE','%'.$request->search.'%')->orwhere('plate_number','LIKE','%'.$request->search.'%')->orwhere('driver_phone_number','LIKE','%'.$request->search.'%')->get();
-        if(count($data) == 0){
+        $id=Auth::user();
+        $data = Driver::where('user_id', $id->id)
+        ->where(function($query) use ($request) {
+            $query->where('vehicle_name', 'LIKE', '%'.$request->search.'%')
+                  ->orWhere('driver_name', 'LIKE', '%'.$request->search.'%')
+                  ->orWhere('plate_number', 'LIKE', '%'.$request->search.'%')
+                  ->orWhere('driver_phone_number', 'LIKE', '%'.$request->search.'%');
+        })
+        ->orderBy('id', 'desc')
+        ->get();
+            if(count($data) == 0){
             return redirect()->back()->with('success','No result was found');
     
          }
@@ -51,4 +66,20 @@ class SalesController extends Controller
             return view('SalesOfficer.search_page',compact('data'))->with('success','The search results below');
          }
     }   
+    public function asc_date(){
+        $id=Auth::user();
+        $data = Driver::where('user_id', $id->id)->orderBy('created_at', 'asc')->get();
+        return view('SalesOfficer.asc_date',compact('data'));
+
+    }
+    public function vechile_type(){
+        $id=Auth::user();
+        $data = Driver::where('user_id', $id->id)->orderBy('plate_number', 'asc')->get();
+        return  view('SalesOfficer.plate',compact('data'));
+    }
+    public function driver_name(){
+        $id=Auth::user();
+        $data = Driver::where('user_id', $id->id)->orderBy('driver_name', 'asc')->get();
+        return view('SalesOfficer.driver_name',compact('data'));
+    }
 }

@@ -22,10 +22,47 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="sales/record.css">
- <style>
-  .navbar{
+  <style>
+     input[type="search"]{
+        float: right;
+  border: none;
+  margin-bottom:70px;
+  margin-right: 20px;
+  font-size: 17px;
+    }
+    @media screen and (max-width: 600px) {
+   input[type=text] {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+    border: 1px solid #ccc;  
+  }
+  
+  
+
+}
+.navbar{
        position: sticky;
         border-bottom: 1px solid white;
+      }
+      .dropdown{
+        margin-left: 20px;
+      }
+      .dropbtn{
+        border-radius: 20px;
+        padding: 16px;
+        width: 100px;
+      }
+      .dropdown-content{
+        border-radius: 20px;
+        padding: 16px;
+        width: 100%;
+      }
+      .card{
+        height: 430px;
       }
       #customers {
   font-family: Arial, Helvetica, sans-serif;
@@ -52,7 +89,9 @@
   background-color: #000000;
   color: white;
 }
- </style>
+
+  </style>
+  
   </head>
   <body>
     <!-- Navbar Section -->
@@ -64,7 +103,7 @@
           <span class="bar"></span> <span class="bar"></span>
           <span class="bar"></span>
         </div>
-        <ul class="navbar__menu"  style="text-transform: capitalize;">
+        <ul class="navbar__menu">
           <li class="navbar__item">
             <a href="{{url('/index')}}" class="navbar__links">HOME</a>
           </li>
@@ -78,16 +117,61 @@
       </div>
     </nav>
 <!--Card section-->
+<!--<div class="main-section">
+    <div class="card-container">
+        <div class="card">
+            <div class="card-content">
+                <h3>Try</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam aspernatur officiis quos. Iure eveniet consequuntur ad impedit! Eligendi culpa molestiae id sed eaque unde nostrum quia eius ex quisquam.</p>
+                <a href="">Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-content">
+                <h3>Try</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam aspernatur officiis quos. Iure eveniet consequuntur ad impedit! Eligendi culpa molestiae id sed eaque unde nostrum quia eius ex quisquam.</p>
+                <a href="">Read More</a>
+            </div>
+        </div>
+    </div>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-content">
+                <h3>Try</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam aspernatur officiis quos. Iure eveniet consequuntur ad impedit! Eligendi culpa molestiae id sed eaque unde nostrum quia eius ex quisquam.</p>
+                <a href="">Read More</a>
+            </div>
+        </div>
+    </div>
+    
+</div>-->
+<h1 class="h1">TOTAL REGISTERED DRIVERS</h1>
+<div class="search">
+    
+    @if (session()->has('success'))
+    <div class="alert alert-success">
+      {{ session()->get('success') }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" aria-hidden="true">X</button>
+  </div>
+ 
+    @endif
+    <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Sort By</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="{{url('/asc_date')}}">sort date asc</a>
+          <a href="{{url('/vechile_type')}}">sort by plate number</a>
+          <a href="{{url('/driver_name')}}"> sort by driver name</a>
+        </div>
+      </div>
+<form  action="{{url('/search')}}" method="post" role="search">
+    @csrf
+    <input style="  border: 1px solid black;padding-left: 20px;" class="search" type="search" name="search" id="" required placeholder="search here">
+  
+  </form>
+</div><br>
 
-<h1 class="h1">TOTAL REGIESTERED DRIVERS</h1>
-
-@if (session()->has('success'))
-<div class="alert alert-success" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><spa aria-hidden="true">X</button>
-  {{ session()->get('success') }}
-</div>
-
-@endif
    
 <table id="customers">
   <tr>
@@ -198,5 +282,26 @@
       </section>
     </div>
     <script src="home/script.js"></script>
+    <script>
+        /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+    </script>
   </body>
 </html>

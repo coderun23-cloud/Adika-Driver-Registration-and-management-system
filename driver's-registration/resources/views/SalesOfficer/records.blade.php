@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="home/styles.css" />
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     
-    <link rel="icon" href="images/logo (1).png" type="image/icon type">
+    <link rel="icon" href="https://adikataxi.com/assets/img/favicon.png" sizes="20x20" type="image/png">
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
@@ -25,14 +25,13 @@
   <style>
     input[type="search"]{
         float: right;
-  padding: 6px;
   border: none;
-  margin-top: 8px;
-  margin-right: 16px;
+  margin-bottom:70px;
+  margin-right: 20px;
   font-size: 17px;
     }
     @media screen and (max-width: 600px) {
-   input[type=text] {
+   input[type="search"] {
     float: none;
     display: block;
     text-align: left;
@@ -45,7 +44,84 @@
   
 
 }
+.navbar{
+       position: sticky;
+        border-bottom: 1px solid white;
+      }
+      .dropdown{
+        margin-left: 20px;
+
+      }
+      .dropbtn{
+        border-radius: 20px;
+        margin-top:16px;
+        width: 130px;
+    
+      }
+      .dropdown-content{
+        border-radius: 20px;
+        padding: 16px;
+        width: 100%;
+      }
+      #customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 80px;
+ 
+}
+  #customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 20px;
+ 
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #000000;
+  color: white;
+}
+/* Stack rows into block elements on small screens */
+@media screen and (max-width: 600px) {
+    #customers, #customers tr, #customers th, #customers td {
+        display: block;
+        width: 100%;
+    }
+
+    #customers tr {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #customers th, #customers td {
+        text-align: right;
+        position: relative;
+        padding-left: 50%;
+        padding-right: 1rem;
+        box-sizing: border-box;
+    }
+
+    #customers th::before, #customers td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 0.5rem;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+}
+
+
   </style>
+  
   </head>
   <body>
     <!-- Navbar Section -->
@@ -59,13 +135,13 @@
         </div>
         <ul class="navbar__menu">
           <li class="navbar__item">
-            <a href="{{url('/index')}}" class="navbar__links">Home</a>
+            <a href="{{url('/index')}}" class="navbar__links">HOME</a>
           </li>
           <li class="navbar__item">
-            <a  href="{{url('/driver_registration')}}" class="navbar__links">DriverRegistration</a>
+            <a  href="{{url('/driver_registration')}}" class="navbar__links">DRIVERREGISTRATION</a>
           </li>
           <li class="navbar__item">
-            <a href="{{url('/records')}}" class="navbar__links">Records</a>
+            <a href="{{url('/records')}}" class="navbar__links">RECORDS</a>
           </li>
           <li class="navbar__btn"><x-app-layout></x-app-layout></li>
       </div>
@@ -101,22 +177,23 @@
     </div>
     
 </div>-->
-<h1 class="h1">TOTAL REGIESTERED DRIVERS</h1>
+
+<h1 class="h1">TOTAL REGISTERED DRIVERS</h1>
 <div class="search">
     
     @if (session()->has('success'))
-    <div class="alert alert-success" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><spa aria-hidden="true">X</button>
+    <div class="alert alert-success">
       {{ session()->get('success') }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close" aria-hidden="true">X</button>
   </div>
  
     @endif
     <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <button onclick="myFunction()" class="dropbtn">Sort By</button>
         <div id="myDropdown" class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
+          <a href="{{url('/asc_date')}}">sort date asc</a>
+          <a href="{{url('/vechile_type')}}">sort by plate number</a>
+          <a href="{{url('/driver_name')}}">sort by driver name</a>
         </div>
       </div>
 <form  action="{{url('/search')}}" method="post" role="search">
@@ -127,25 +204,31 @@
 </div><br>
 
    
-<div class="column-container">  
-    @foreach ($data as $data )
-    <div class="column">
-   
-      <div class="card">
-        <h1 class="h1">Driver's Information</h1>
-        <h3>Vechile Name:{{$data->vehicle_name}}</h3>
-        <h3>Vechile Type:{{$data->vehicle_type}}</h3>
-        <h3>Plate Number:{{$data->plate_number}}</h3>
-        <h3>Driver's Name:{{$data->driver_name}}</h3>
-        <h3>Phone Number:{{$data->driver_phone_number}}</h3>
-        <h3>Driver's Email:{{$data->driver_email}}</h3>
-        <h3>Gender:{{$data->gender}}</h3>
-    </div>
-    </div>
 
- 
+  <table id="customers">
+    <tr>
+      <th>n<span style="text-decoration: underline;">o</span></th>
+      <th>Vehicle Name</th>
+      <th>vehicle Type</th>
+      <th>Plate Number</th>
+      <th>Driver's Name</th>
+      <th>Phone Number</th>
+      <th>Email</th>
+      <th>Gender</th>
+    </tr>
+    @foreach ($data as $data )
+    <tr>
+        <td>{{$data->id}}</td>
+        <td>{{$data->vehicle_name}}</td>
+        <td>{{$data->vehicle_type}}</td>
+        <td>{{$data->plate_number}}</td>
+        <td>{{$data->driver_name}}</td>
+        <td>{{$data->driver_phone_number}}</td>
+        <td>{{$data->driver_email}}</td>
+        <td>{{$data->gender}}</td>
+    </tr>
     @endforeach
-  </div>
+  </table>
 
 
 

@@ -9,8 +9,7 @@
     <title>Adika Driver's Registration</title>
     <link rel="stylesheet" href="home/styles.css" />
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link rel="icon" href="images/logo (1).png" type="image/icon type">
+    <link rel="icon" href="https://adikataxi.com/assets/img/favicon.png" sizes="20x20" type="image/png">
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
@@ -22,6 +21,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="sales/register.css">
+    <style>
+      .navbar{
+       position: sticky;
+        border-bottom: 1px solid white;
+      }
+      
+    </style>
   </head>
   <body>
     <!-- Navbar Section -->
@@ -33,15 +39,15 @@
           <span class="bar"></span> <span class="bar"></span>
           <span class="bar"></span>
         </div>
-        <ul class="navbar__menu">
+        <ul class="navbar__menu" >
           <li class="navbar__item">
-            <a href="{{url('/index')}}" class="navbar__links">Home</a>
+            <a style="text-transform: capitalize;" href="{{url('/index')}}" class="navbar__links">HOME</a>
           </li>
           <li class="navbar__item">
-            <a  href="{{url('/driver_registration')}}" class="navbar__links">DriverRegistration</a>
+            <a style="text-transform: capitalize;"  href="{{url('/driver_registration')}}" class="navbar__links">DRIVERREGISTRATION</a>
           </li>
           <li class="navbar__item">
-            <a href="{{url('/records')}}" class="navbar__links">Records</a>
+            <a style="text-transform: capitalize;" href="{{url('/records')}}" class="navbar__links">RECORDS</a>
           </li>
           <li class="navbar__btn"><x-app-layout></x-app-layout></li>
       </div>
@@ -81,19 +87,21 @@
                 <label class="details">
                     Plate Number
                 </label>
-                <input type="number" name="pnum" id="" placeholder="enter the plate number" required>
+                <input type="text" name="pnum" id="" placeholder="enter the plate number" required>
             </div>
             <div class="input_box">
                 <label class="details">
                     Vehicle Type
                 </label>
                 <select name="type" id="type">
-                    <optgroup label="Automobile">
-                    <option value="toyota">Toyota</option>
-                    <option value="Suzuki">Suzuki</option>
-                    <option value="Hyundai">Hyundai</option>
-                </optgroup>
-                    <option value="Other">Other</option>
+                    
+                    <option value="Passenger Vehicles">Passenger Vehicles</option>
+                    <option value="Commercial Vehicles">Commercial Vehicles</option>
+                    <option value="Specialized Vehicles">Specialized Vehicles</option>
+                    <option value="Electric and Hybrid Vehicles">Electric and Hybrid Vehicles</option>
+                    <option value="Luxury and Performance Vehicles">Luxury and Performance Vehicles</option>
+                
+                    <option value="Other">Other Vehicles</option>
                 
                 </select>
             </div>
