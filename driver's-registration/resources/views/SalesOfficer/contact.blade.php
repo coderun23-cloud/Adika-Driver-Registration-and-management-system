@@ -134,8 +134,8 @@ input[type="submit"]:hover {
         <div class="main__content">
         <h1 style="text-align: center;padding-top:1rem;">Contact Form</h1>
         <div class="form-container">
-            <form action="" method="post">
-             
+            <form action="{{url('/sent_message')}}" method="post">
+                @csrf
                 <label for="name">Name:</label>
                 <input type="text" name="name" id="name" placeholder="Enter your name" required>
                 

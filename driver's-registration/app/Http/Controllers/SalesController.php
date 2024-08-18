@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Driver;
 use App\Models\User;
+use App\Models\Contact;
 use Illuminate\Support\Facades\Auth;
 
 class SalesController extends Controller
@@ -12,9 +13,7 @@ class SalesController extends Controller
     public function driver_registration(){
         return view('SalesOfficer.driver_registration');
     }
-    public function contact(){
-        return view('SalesOfficer.contact');
-    }
+
     public function about(){
         return view('SalesOfficer.about');
     }
@@ -81,5 +80,17 @@ class SalesController extends Controller
         $id=Auth::user();
         $data = Driver::where('user_id', $id->id)->orderBy('driver_name', 'asc')->get();
         return view('SalesOfficer.driver_name',compact('data'));
+    }
+    public function message(){
+        return view('SalesOfficer.contact');
+    }
+    
+    public function sent_message(Request $request){
+        $message=new Contact;
+        $message->name=$request->name;
+        $message->email=$request->email;
+        $message->message=$request->desc;
+        $message->save();
+        return redirect()->back()->with('success','message sent successfully');
     }
 }
