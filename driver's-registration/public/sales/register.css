@@ -3,6 +3,11 @@
 justify-content: center;
 align-items: center;
 width: 100%;
+background-image: url('https://adikataxi.com/assets/img/others/taxi1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 .form_container{
    
@@ -10,16 +15,15 @@ width: 100%;
 padding: 28px;
 margin: 20px 28px;
 border-radius: 10px;
-box-shadow: inset -2px 2px 2px white;
 }
 .title{
 font-size: 35px;
 font-weight: bold;
 text-align: center;
 padding-bottom: 15px;
-color: rgb(0, 0, 0);
-text-shadow: 2px 2px 2px rgb(255, 255, 255);
-border-bottom: solid 1px rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+
+background-color: transparent;
 
 }
 .user_details{
@@ -37,13 +41,14 @@ display: flex;
 flex-wrap: wrap;
 width: 50%;
 padding-bottom: 15px;
+
 }
 .input_box input::placeholder{
 opacity: 0.7;
 }
 .input_box label{
 width: 95%;
-color: rgb(0, 0, 0);
+color: rgb(255, 255, 255);
 font-size:24px;
 font-weight: 600;
 margin: 5px 0; 
@@ -55,16 +60,18 @@ border-radius: 7px;
 outline: none;
 border: 1px solid gray;
 padding: 0 12px;
+color: white;
+background-color: transparent;
 }
 .gender-title{
-color: black;
+color: rgb(255, 255, 255);
 font-size: 24px;
 font-weight: 600;
-border-bottom: 1px solid black;
+
 }
 .gender-category{
 margin: 15px 0;
-color: black;
+color: rgb(255, 255, 255);
 }
 .gender-category label{
 padding: 0 20px 0 5px;
@@ -80,21 +87,26 @@ margin-top: 40px;
 input[type="submit"]{
 display: block;
 margin: auto;
-width: 35%;
+width: 26%;
 margin-top: 10px;
 font-size: 23px;
-padding: 10px;
+padding: 13px;
 border: none;
-border-radius: 3px;
+border-radius:4px;
 color:white;
-background:black;
+
 border-radius: 18px;
 font-weight: 600;
 letter-spacing: 1px;
+background-image: linear-gradient(to top, #dd1600 0%, #fe5151 100%);
+cursor: pointer;
+
+outline: none;
 }
+
 input[type="submit"]:hover{
-background:rgb(124, 122, 122);
-color: rgb(0, 0, 0);
+background:rgb(241, 113, 113);
+color: rgb(255, 255, 255);
 
 }
 #type{

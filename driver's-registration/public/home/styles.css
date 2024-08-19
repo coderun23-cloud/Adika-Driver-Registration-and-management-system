@@ -18,6 +18,7 @@
     position: sticky;
     top: 0;
     z-index: 999;
+    box-shadow: 1px 1px 7px white;
   }
   
   .navbar__container {
@@ -217,7 +218,7 @@
     background-color:transparent;
     z-index: 1;
     width: 100%;
-    max-width: 1300px;
+    
     padding-right: 50px;
     padding-left: 50px;
   }
@@ -245,7 +246,7 @@
     margin-top: 10px;
     background-color: #cd0000;
     font-weight: bolder;
-    margin-left: 170px;
+    text-align: center;
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -261,7 +262,7 @@
   
   .main__btn {
     font-size: 1rem;
-    background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%);
+    background-image: linear-gradient(to top, #dd1600 0%, #fe5151 100%);
     padding: 14px 32px;
     border: none;
     border-radius: 4px;
@@ -392,6 +393,7 @@
     -moz-text-fill-color: transparent;
     margin-bottom: 5rem;
     font-size: 2.5rem;
+    font-weight: bolder;
   }
   
   .services__container {
@@ -407,7 +409,7 @@
     border-radius: 4px;
     background-image: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0) 0%,
+        rgba(255, 171, 171, 0) 0%,
         rgba(17, 17, 17, 0.6) 100%
       ),
       url('/images/pexels-mizunokozuki-13801669.jpg');

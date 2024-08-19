@@ -22,7 +22,7 @@
     <style>
        
         .form-container {
-     margin-left: 100px;
+     margin-left: 15rem;
     background-color:transparent;
     padding: 2rem;
     border-radius: 8px;

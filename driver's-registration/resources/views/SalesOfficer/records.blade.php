@@ -23,101 +23,7 @@
     />
     <link rel="stylesheet" href="sales/record.css">
   <style>
-    input[type="search"]{
-        float: right;
-  border: none;
-  margin-bottom:70px;
-  margin-right: 20px;
-  font-size: 17px;
-    }
-    @media screen and (max-width: 600px) {
-   input[type="search"] {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-    border: 1px solid #ccc;  
-  }
-  
-  
-
-}
-.navbar{
-       position: sticky;
-        border-bottom: 1px solid white;
-      }
-      .dropdown{
-        margin-left: 20px;
-
-      }
-      .dropbtn{
-        border-radius: 20px;
-        margin-top:16px;
-        width: 130px;
     
-      }
-      .dropdown-content{
-        border-radius: 20px;
-        padding: 16px;
-        width: 100%;
-      }
-      #customers {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 80px;
- 
-}
-  #customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 20px;
- 
-}
-
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-
-#customers tr:hover {background-color: #ddd;}
-
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #000000;
-  color: white;
-}
-/* Stack rows into block elements on small screens */
-@media screen and (max-width: 600px) {
-    #customers, #customers tr, #customers th, #customers td {
-        display: block;
-        width: 100%;
-    }
-
-    #customers tr {
-        margin-bottom: 1rem;
-        display: flex;
-        flex-direction: column;
-    }
-
-    #customers th, #customers td {
-        text-align: right;
-        position: relative;
-        padding-left: 50%;
-        padding-right: 1rem;
-        box-sizing: border-box;
-    }
-
-    #customers th::before, #customers td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 0.5rem;
-        font-weight: bold;
-        white-space: nowrap;
-    }
-}
 
 
   </style>
@@ -178,13 +84,15 @@
     
 </div>-->
 
-<h1 class="h1">TOTAL REGISTERED DRIVERS</h1>
+<div class="main-area">
+  <h1 class="h1">TOTAL REGISTERED DRIVERS</h1>
 <div class="search">
     
     @if (session()->has('success'))
-    <div class="alert alert-success">
+    <div class="alert alert-success alert-dismissible">
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close" aria-hidden="true"></button>
       {{ session()->get('success') }}
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close" aria-hidden="true">X</button>
+     
   </div>
  
     @endif
@@ -196,15 +104,18 @@
           <a href="{{url('/driver_name')}}">sort by driver name</a>
         </div>
       </div>
-<form  action="{{url('/search')}}" method="post" role="search">
+<div class="search">
+  <form  action="{{url('/search')}}" method="post" role="search">
     @csrf
-    <input style="  border: 1px solid black;padding-left: 20px;" class="search" type="search" name="search" id="" required placeholder="search here">
+    <input style="padding-left: 20px;" class="search" type="search" name="search" id="" required placeholder="search here">
   
   </form>
+</div>
 </div><br>
 
    
-
+<div class="table">
+  
   <table id="customers">
     <tr>
       <th>n<span style="text-decoration: underline;">o</span></th>
@@ -229,6 +140,8 @@
     </tr>
     @endforeach
   </table>
+</div>
+</div>
 
 
 

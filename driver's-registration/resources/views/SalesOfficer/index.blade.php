@@ -44,7 +44,7 @@
           <li class="navbar__btn"><x-app-layout></x-app-layout></li>
       </div>
     </nav>
-  
+
     <!-- Hero Section -->
     <div class="main" style="background-image: url('https://adikataxi.com/assets/img/others/taxi1.jpg');
     background-position: center;

@@ -24,7 +24,7 @@
     <style>
       .navbar{
        position: sticky;
-        border-bottom: 1px solid white;
+  
       }
       
     </style>
@@ -61,13 +61,13 @@
        
         
           @if (session()->has('success'))
-          <div class="alert alert-success" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><spa aria-hidden="true">X</button>
-            {{ session()->get('success') }}
+          <div class="alert alert-success alert-dismissible" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            {{ session('success') }}
         </div>
         @elseif (session()->has('alert'))
-        <div class="alert alert-danger" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><spa aria-hidden="true">X</button>
+        <div class="alert alert-danger alert-dismissible" role="alert">
+          <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
           {{ session()->get('alert') }}
       </div>
           @endif

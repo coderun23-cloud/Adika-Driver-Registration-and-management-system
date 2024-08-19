@@ -50,8 +50,7 @@ class SalesController extends Controller
         $id=Auth::user();
         $data = Driver::where('user_id', $id->id)
         ->where(function($query) use ($request) {
-            $query->where('vehicle_name', 'LIKE', '%'.$request->search.'%')
-                  ->orWhere('driver_name', 'LIKE', '%'.$request->search.'%')
+            $query->orWhere('driver_name', 'LIKE', '%'.$request->search.'%')
                   ->orWhere('plate_number', 'LIKE', '%'.$request->search.'%')
                   ->orWhere('driver_phone_number', 'LIKE', '%'.$request->search.'%');
         })

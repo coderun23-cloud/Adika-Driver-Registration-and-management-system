@@ -23,72 +23,8 @@
     />
     <link rel="stylesheet" href="sales/record.css">
   <style>
-    input[type="search"]{
-        float: right;
-  border: none;
-  margin-bottom:70px;
-  margin-right: 20px;
-  font-size: 17px;
-    }
-    @media screen and (max-width: 600px) {
-   input[type=text] {
-    float: none;
-    display: block;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    padding: 14px;
-    border: 1px solid #ccc;  
-  }
-  
-  
+    
 
-}
-.navbar{
-       position: sticky;
-        border-bottom: 1px solid white;
-      }
-      .dropdown{
-        margin-left: 20px;
-      }
-      .dropbtn{
-        border-radius: 20px;
-        padding: 16px;
-        width: 100px;
-      }
-      .dropdown-content{
-        border-radius: 20px;
-        padding: 16px;
-        width: 100%;
-      }
-      .card{
-        height: 430px;
-      }
-      #customers {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-  
-      
-}
-
-      #customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 20px;
- 
-}
-
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-
-#customers tr:hover {background-color: #ddd;}
-
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #000000;
-  color: white;
-}
 
   </style>
   
@@ -104,99 +40,65 @@
           <span class="bar"></span>
         </div>
         <ul class="navbar__menu">
-          <li class="navbar__item"  style="text-transform: capitalize;">
+          <li class="navbar__item">
             <a href="{{url('/index')}}" class="navbar__links">HOME</a>
           </li>
-          <li class="navbar__item" style="text-transform: capitalize;">
+          <li class="navbar__item">
             <a  href="{{url('/driver_registration')}}" class="navbar__links">DRIVERREGISTRATION</a>
           </li>
-          <li class="navbar__item" style="text-transform: capitalize;">
+          <li class="navbar__item">
             <a href="{{url('/records')}}" class="navbar__links">RECORDS</a>
           </li>
           <li class="navbar__btn"><x-app-layout></x-app-layout></li>
       </div>
     </nav>
-<!--Card section-->
-<!--<div class="main-section">
-    <div class="card-container">
-        <div class="card">
-            <div class="card-content">
-                <h3>Try</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam aspernatur officiis quos. Iure eveniet consequuntur ad impedit! Eligendi culpa molestiae id sed eaque unde nostrum quia eius ex quisquam.</p>
-                <a href="">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="card-container">
-        <div class="card">
-            <div class="card-content">
-                <h3>Try</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam aspernatur officiis quos. Iure eveniet consequuntur ad impedit! Eligendi culpa molestiae id sed eaque unde nostrum quia eius ex quisquam.</p>
-                <a href="">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="card-container">
-        <div class="card">
-            <div class="card-content">
-                <h3>Try</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam aspernatur officiis quos. Iure eveniet consequuntur ad impedit! Eligendi culpa molestiae id sed eaque unde nostrum quia eius ex quisquam.</p>
-                <a href="">Read More</a>
-            </div>
-        </div>
-    </div>
-    
-</div>-->
-<h1 class="h1">TOTAL REGISTERED DRIVERS</h1>
+
+<div class="main-area">
+  <h1 class="h1">TOTAL REGISTERED DRIVERS</h1>
 <div class="search">
-    
-    @if (session()->has('success'))
-    <div class="alert alert-success">
-      {{ session()->get('success') }}
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close" aria-hidden="true">X</button>
-  </div>
+
  
-    @endif
+
     <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">Sort By</button>
         <div id="myDropdown" class="dropdown-content">
           <a href="{{url('/asc_date')}}">sort date asc</a>
           <a href="{{url('/vechile_type')}}">sort by plate number</a>
-          <a href="{{url('/driver_name')}}"> sort by driver name</a>
+          <a href="{{url('/driver_name')}}">sort by driver name</a>
         </div>
       </div>
-<form  action="{{url('/search')}}" method="post" role="search">
-    @csrf
-    <input style="  border: 1px solid black;padding-left: 20px;" class="search" type="search" name="search" id="" required placeholder="search here">
-  
-  </form>
+
 </div><br>
 
    
-<table id="customers">
-  <tr>
-    <th>n<span style="text-decoration: underline;">o</span></th>
-    <th>Vehicle Name</th>
-    <th>vehicle Type</th>
-    <th>Plate Number</th>
-    <th>Driver's Name</th>
-    <th>Phone Number</th>
-    <th>Email</th>
-    <th>Gender</th>
-  </tr>
-  @foreach ($data as $data )
-  <tr>
-      <td>{{$data->id}}</td>
-      <td>{{$data->vehicle_name}}</td>
-      <td>{{$data->vehicle_type}}</td>
-      <td>{{$data->plate_number}}</td>
-      <td>{{$data->driver_name}}</td>
-      <td>{{$data->driver_phone_number}}</td>
-      <td>{{$data->driver_email}}</td>
-      <td>{{$data->gender}}</td>
-  </tr>
-  @endforeach
-</table>
+<div class="table">
+  
+  <table id="customers">
+    <tr>
+      <th>n<span style="text-decoration: underline;">o</span></th>
+      <th>Vehicle Name</th>
+      <th>vehicle Type</th>
+      <th>Plate Number</th>
+      <th>Driver's Name</th>
+      <th>Phone Number</th>
+      <th>Email</th>
+      <th>Gender</th>
+    </tr>
+    @foreach ($data as $data )
+    <tr>
+        <td>{{$data->id}}</td>
+        <td>{{$data->vehicle_name}}</td>
+        <td>{{$data->vehicle_type}}</td>
+        <td>{{$data->plate_number}}</td>
+        <td>{{$data->driver_name}}</td>
+        <td>{{$data->driver_phone_number}}</td>
+        <td>{{$data->driver_email}}</td>
+        <td>{{$data->gender}}</td>
+    </tr>
+    @endforeach
+  </table>
+</div>
+</div>
 
 
 
