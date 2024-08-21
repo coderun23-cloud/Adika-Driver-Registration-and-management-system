@@ -43,7 +43,8 @@ class SalesController extends Controller
     public function records(){
       $id=Auth::user();
       $data=Driver::where('user_id',$id->id)->orderby('id','asc')->get();
-        return view('SalesOfficer.records',compact('data'));
+      $num=count($data);
+        return view('SalesOfficer.records',compact('data','num'));
     }
    
     public function search(Request $request){

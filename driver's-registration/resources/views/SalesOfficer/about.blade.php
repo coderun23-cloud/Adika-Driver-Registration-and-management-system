@@ -68,7 +68,7 @@
             <a href="/" class="navbar__links">HOME</a>
           </li>
           <li class="navbar__item">
-            <a href="{{url('/contact')}}" class="navbar__links">CONTACTUS</a>
+            <a href="{{url('/contact')}}" class="navbar__links">CONTACT <span style="margin-left: 10px;">US</span></a>
           </li>
           <li class="navbar__item">
             <a href="{{url('/about')}}" class="navbar__links">ABOUT</a>

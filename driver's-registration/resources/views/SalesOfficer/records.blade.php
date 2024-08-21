@@ -26,6 +26,7 @@
     
 
 
+
   </style>
   
   </head>
@@ -44,7 +45,7 @@
             <a href="{{url('/index')}}" class="navbar__links">HOME</a>
           </li>
           <li class="navbar__item">
-            <a  href="{{url('/driver_registration')}}" class="navbar__links">DRIVERREGISTRATION</a>
+            <a href="{{url('/driver_registration')}}" class="navbar__links">DRIVER<span style="margin-left: 8px;">REGISTRATION</span></a>
           </li>
           <li class="navbar__item">
             <a href="{{url('/records')}}" class="navbar__links">RECORDS</a>
@@ -86,6 +87,7 @@
 
 <div class="main-area">
   <h1 class="h1">TOTAL REGISTERED DRIVERS</h1>
+  <h1 style="color: white;float:right;margin-right:10px;text-transform:capitalize">number of successful driver registrations:{{$num}}</h1>
 <div class="search">
     
     @if (session()->has('success'))
@@ -94,7 +96,7 @@
       {{ session()->get('success') }}
      
   </div>
- 
+
     @endif
     <div class="dropdown">
         <button onclick="myFunction()" class="dropbtn">Sort By</button>

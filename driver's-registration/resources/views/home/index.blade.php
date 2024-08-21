@@ -32,10 +32,10 @@
         </div>
         <ul class="navbar__menu">
           <li class="navbar__item">
-            <a href="{{url('/')}}" class="navbar__links">HOME</a>
+            <a href="{{url('/')}}" class=" navbar__links">HOME</a>
           </li>
           <li class="navbar__item">
-            <a href="{{url('/contact')}}" class="navbar__links">CONTACTUS</a>
+            <a href="{{url('/contact')}}" class="navbar__links">CONTACT <span style="margin-left: 10px;">US</span></a>
           </li>
           <li class="navbar__item">
             <a href="{{url('/about')}}" class="navbar__links">ABOUT</a>
@@ -95,7 +95,7 @@
         </div>
         <div class="services__card" style="background-color:rgb(171, 171, 171); background-image: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0) 0%,
+        rgba(121, 121, 121, 0) 0%,
         rgba(255, 255, 255, 1) 100%
       ),
       url('/images/deli.png');">
