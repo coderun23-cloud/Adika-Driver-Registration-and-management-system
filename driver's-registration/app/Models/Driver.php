@@ -15,4 +15,6 @@ class Driver extends Model
     protected $fillable=[
         'vehicle_name','vehicle_type','plate_number','driver_name','driver_phone_number','driver_email','gender','user_id',
     ];
+
+
 }

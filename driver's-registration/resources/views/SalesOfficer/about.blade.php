@@ -73,6 +73,9 @@
           <li class="navbar__item">
             <a href="{{url('/about')}}" class="navbar__links">ABOUT</a>
           </li>
+          <li class="navbar__item">
+            <a href="{{url('/performance_tracking')}}" class="navbar__links">PERFORMANCE <span style="margin-left: 5px;">TRACKING</span></a>
+          </li>
           <li class="navbar__btn"><a href="{{route('login')}}" class="button">Sign In</a></li>
         </ul>
       </div>

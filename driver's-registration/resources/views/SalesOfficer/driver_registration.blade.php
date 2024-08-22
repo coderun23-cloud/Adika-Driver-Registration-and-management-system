@@ -49,6 +49,9 @@
           <li class="navbar__item">
             <a style="text-transform: capitalize;" href="{{url('/records')}}" class="navbar__links">RECORDS</a>
           </li>
+          <li class="navbar__item">
+            <a href="{{url('/performance_tracking')}}" class="navbar__links">PERFORMANCE <span style="margin-left: 5px;">TRACKING</span></a>
+          </li>
           <li class="navbar__btn"><x-app-layout></x-app-layout></li>
       </div>
     </nav>
@@ -115,7 +118,7 @@
                 <label class="details">
                     Driver's Phone Number
                 </label>
-                <input type="number" name="dnum" id="" placeholder="enter the driver's phone number" required>
+                <input type="text" name="dnum" id="" placeholder="enter the driver's phone number" required>
             </div>
             <div class="input_box">
                 <label class="details">

@@ -56,7 +56,7 @@ margin: 5px 0;
 .input_box input{
 height: 50px;
 width: 95%;
-border-radius: 7px;
+border-radius: 10px;
 outline: none;
 border: 2px solid rgb(255, 255, 255);
 padding: 0 12px;
@@ -87,7 +87,7 @@ margin-top: 40px;
 input[type="submit"]{
 display: block;
 margin: auto;
-width: 26%;
+width: 23%;
 margin-top: 10px;
 font-size: 23px;
 padding: 13px;

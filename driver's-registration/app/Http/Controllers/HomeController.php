@@ -19,6 +19,7 @@ class HomeController extends Controller
        
          return view('Salesofficer.index');
      }
+   
      else {
          return redirect()->back();
  

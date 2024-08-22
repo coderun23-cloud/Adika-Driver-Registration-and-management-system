@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('vehicle_name')->nullable();
             $table->string('vehicle_type')->nullable();
-            $table->integer('plate_number')->nullable();
+            $table->string('plate_number')->unique();
             $table->string('driver_name')->nullable();
             $table->integer('driver_phone_number')->nullable();
             $table->string('driver_email')->nullable();

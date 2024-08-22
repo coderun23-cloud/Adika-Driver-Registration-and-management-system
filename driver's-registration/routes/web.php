@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SalesController;
 
+
 Route::get('/', function () {
     return view('home.index');
 });
@@ -19,6 +20,7 @@ Route::get('/asc_date',[SalesController::class,'asc_date']);
 Route::get('/vechile_type',[SalesController::class,'vechile_type']);
 Route::get('/driver_name',[SalesController::class,'driver_name']);
 Route::post('/sent_message',[SalesController::class,'sent_message']);
+Route::get('/performance_tracking',[SalesController::class,'performance']);
 
 
 Route::middleware([
@@ -30,3 +32,4 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+

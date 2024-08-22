@@ -49,6 +49,9 @@
           <li class="navbar__item">
             <a href="{{url('/records')}}" class="navbar__links">RECORDS</a>
           </li>
+          <li class="navbar__item">
+            <a href="{{url('/performance_tracking')}}" class="navbar__links">PERFORMANCE <span style="margin-left: 5px;">TRACKING</span></a>
+          </li>
           <li class="navbar__btn"><x-app-layout></x-app-layout></li>
       </div>
     </nav>
