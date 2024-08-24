@@ -36,7 +36,7 @@
             <a href="{{url('/index')}}" class="navbar__links">HOME</a>
           </li>
           <li class="navbar__item">
-            <a  href="{{url('/driver_registration')}}" class="navbar__links">DRIVERREGISTRATION</a>
+            <a  href="{{url('/driver_registration')}}" class="navbar__links">DRIVER <span style="margin-left: 5px;">REGISTRATION</span></a>
           </li>
           <li class="navbar__item">
             <a href="{{url('/records')}}" class="navbar__links">RECORDS</a>

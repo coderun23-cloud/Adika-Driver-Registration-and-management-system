@@ -78,15 +78,21 @@
       <th>Total number of drivers registered</th>
       <th>Total number of drivers approved</th>
       <th>Total number of drivers rejected</th>
+      <th>Total number of drivers applied</th>
   
     </tr>
  
     <tr>
-   <td>1</td>
-   <td>2</td>
-   <td>3</td>
-   <td>4</td>
-      
+       
+        <td>1</td>
+   
+        <td>{{$num}}</td>
+        <td>Not Available</td>
+        <td>Not Available</td>
+        <td>Not Available</td>
+           
+       
+
     </tr>
 
   </table>

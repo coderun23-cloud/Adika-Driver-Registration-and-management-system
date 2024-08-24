@@ -43,22 +43,10 @@ class SalesController extends Controller
     public function records(){
       $id=Auth::user();
       $data=Driver::where('user_id',$id->id)->orderby('id','asc')->get();
-      $approve= Driver::where('user_id', $id->id)
-      ->where(function($query){
-          $query->orWhere('status','approved');
-      })
-      ->orderBy('id', 'desc')
-      ->get();
-      $reject=Driver::where('user_id', $id->id)
-      ->where(function($query){
-          $query->orWhere('status','rejected');
-      })
-      ->orderBy('id', 'desc')
-      ->get();
-      $app_num=count($approve);
+     
       $num=count($data);
-      $rej=count($reject);
-        return view('SalesOfficer.records',compact('data','num','app_num','rej'));
+     
+        return view('SalesOfficer.records',compact('data'));
     }
    
     public function search(Request $request){
@@ -108,6 +96,23 @@ class SalesController extends Controller
         return redirect()->back()->with('success','message sent successfully');
     }
     public function performance(){
-        return view('SalesOfficer.performance_tracking');
+        $id=Auth::user();
+        $data=Driver::where('user_id',$id->id)->orderby('id','asc')->get();
+        $num=count($data);
+        $approve= Driver::where('user_id', $id->id)
+        ->where(function($query){
+            $query->orWhere('status','approved');
+        })
+        ->orderBy('id', 'desc')
+        ->get();
+        $reject=Driver::where('user_id', $id->id)
+        ->where(function($query){
+            $query->orWhere('status','rejected');
+        })
+        ->orderBy('id', 'desc')
+        ->get();
+        $app_num=count($approve);
+        $rej=count($reject);
+        return view('SalesOfficer.performance_tracking',compact('num','app_num','rej'));
     }
 }
