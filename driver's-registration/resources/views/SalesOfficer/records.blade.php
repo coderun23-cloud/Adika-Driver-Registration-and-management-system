@@ -22,9 +22,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="sales/record.css">
-  <style>
-    
 
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .h1{
+      font-weight: bolder;
+    }
+.center{
+  margin-left: 35rem;
+}
 
 
   </style>
@@ -51,7 +58,7 @@
             <a href="{{url('/records')}}" class="navbar__links">RECORDS</a>
           </li>
           <li class="navbar__item">
-            <a href="{{url('/performance_tracking')}}" class="navbar__links">PERFORMANCE <span style="margin-left: 5px;">TRACKING</span></a>
+            <a href="{{url('/performance_tracking')}}" class="navbar__links">KPI</a>
           </li>
         
           <li class="navbar__btn"><x-app-layout></x-app-layout></li>
@@ -121,7 +128,7 @@
 </div>
 </div><br>
 
-   
+
 <div class="table">
   
   <table id="customers">
@@ -136,21 +143,26 @@
       <th>Gender</th>
       <th>Status</th>
     </tr>
-    @foreach ($data as $data )
+    @foreach ($data as $datas )
     <tr>
-        <td>{{$data->id}}</td>
-        <td>{{$data->vehicle_name}}</td>
-        <td>{{$data->vehicle_type}}</td>
-        <td>{{$data->plate_number}}</td>
-        <td>{{$data->driver_name}}</td>
-        <td>{{$data->driver_phone_number}}</td>
-        <td>{{$data->driver_email}}</td>
-        <td>{{$data->gender}}</td>
-        <td>{{$data->status}}</td>
+        <td>{{$datas->id}}</td>
+        <td>{{$datas->vehicle_name}}</td>
+        <td>{{$datas->vehicle_type}}</td>
+        <td>{{$datas->plate_number}}</td>
+        <td>{{$datas->driver_name}}</td>
+        <td>{{$datas->driver_phone_number}}</td>
+        <td>{{$datas->driver_email}}</td>
+        <td>{{$datas->gender}}</td>
+        <td>{{$datas->status}}</td>
     </tr>
     @endforeach
+  
   </table>
+<div class="center">
+  {{$data->links()}}
 </div>
+</div>
+
 </div>
 
 

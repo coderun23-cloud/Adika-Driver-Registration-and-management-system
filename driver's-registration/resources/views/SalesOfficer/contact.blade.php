@@ -19,6 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+
     <style>
        
         .form-container {
@@ -124,6 +125,14 @@ input[type="submit"]:hover {
       </div>
     </nav>
 
+    <div class="alert alert-success alert-dismissible">
+          @if (session()->has('success'))
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close" aria-hidden="true"></button>
+      {{ session()->get('success') }}
+     
+    </div>
+
+    @endif
     <!-- Hero Section -->
     <div class="main"  style=" height:75%; background-image: url('https://adikataxi.com/assets/img/others/taxi1.jpg');
     background-position: center;

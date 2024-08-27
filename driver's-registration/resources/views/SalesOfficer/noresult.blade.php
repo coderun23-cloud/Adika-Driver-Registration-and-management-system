@@ -24,7 +24,17 @@
     <link rel="stylesheet" href="sales/record.css">
   <style>
     
-
+.main-area{
+   padding-bottom: 10rem;
+   padding-top: 3rem;
+   height: 100%;
+}
+.h1{
+    background: rgb(247, 119, 119);
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
 
   </style>
   
@@ -55,84 +65,16 @@
           <li class="navbar__btn"><x-app-layout></x-app-layout></li>
       </div>
     </nav>
-<!--Card section-->
-<!--<div class="main-section">
-    <div class="card-container">
-        <div class="card">
-            <div class="card-content">
-                <h3>Try</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam aspernatur officiis quos. Iure eveniet consequuntur ad impedit! Eligendi culpa molestiae id sed eaque unde nostrum quia eius ex quisquam.</p>
-                <a href="">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="card-container">
-        <div class="card">
-            <div class="card-content">
-                <h3>Try</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam aspernatur officiis quos. Iure eveniet consequuntur ad impedit! Eligendi culpa molestiae id sed eaque unde nostrum quia eius ex quisquam.</p>
-                <a href="">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="card-container">
-        <div class="card">
-            <div class="card-content">
-                <h3>Try</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam aspernatur officiis quos. Iure eveniet consequuntur ad impedit! Eligendi culpa molestiae id sed eaque unde nostrum quia eius ex quisquam.</p>
-                <a href="">Read More</a>
-            </div>
-        </div>
-    </div>
-    
-</div>-->
+
 
 <div class="main-area">
-  <h1 class="h1">TOTAL REGISTERED DRIVERS</h1>
-<div class="search">
-    
+  <h1 class="h1">
+    No Result Was Found!
+  </h1>
 
- 
-  
-    <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Sort By</button>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="{{url('/asc_date')}}">sort date asc</a>
-          <a href="{{url('/vechile_type')}}">sort by plate number</a>
-          <a href="{{url('/driver_name')}}">sort by driver name</a>
-        </div>
-      </div>
-
-</div><br>
 
    
-<div class="table">
-  
-  <table id="customers">
-    <tr>
-      <th>n<span style="text-decoration: underline;">o</span></th>
-      <th>Vehicle Name</th>
-      <th>vehicle Type</th>
-      <th>Plate Number</th>
-      <th>Driver's Name</th>
-      <th>Phone Number</th>
-      <th>Email</th>
-      <th>Gender</th>
-    </tr>
-    @foreach ($data as $data )
-    <tr>
-        <td>{{$data->id}}</td>
-        <td>{{$data->vehicle_name}}</td>
-        <td>{{$data->vehicle_type}}</td>
-        <td>{{$data->plate_number}}</td>
-        <td>{{$data->driver_name}}</td>
-        <td>{{$data->driver_phone_number}}</td>
-        <td>{{$data->driver_email}}</td>
-        <td>{{$data->gender}}</td>
-    </tr>
-    @endforeach
-  </table>
-</div>
+
 </div>
 
 

@@ -40,14 +40,19 @@ class SalesController extends Controller
             
        
     }
-    public function records(){
-      $id=Auth::user();
-      $data=Driver::where('user_id',$id->id)->orderby('id','asc')->get();
-     
-      $num=count($data);
-     
-        return view('SalesOfficer.records',compact('data'));
+    public function records()
+{
+    
+    $user = Auth::user();
+
+    if (!$user) {
+        return redirect()->route('login')->withErrors('You must be logged in to view this page.');
     }
+    $data = Driver::where('user_id', $user->id)
+                  ->orderBy('id', 'asc')
+                  ->paginate(6); 
+    return view('SalesOfficer.records', compact('data'));
+}
    
     public function search(Request $request){
         $id=Auth::user();
@@ -60,7 +65,7 @@ class SalesController extends Controller
         ->orderBy('id', 'desc')
         ->get();
             if(count($data) == 0){
-            return redirect()->back()->with('success','No result was found');
+            return view('SalesOfficer.noresult')->with('success','No result was found');
     
          }
          else{
@@ -84,7 +89,7 @@ class SalesController extends Controller
         return view('SalesOfficer.driver_name',compact('data'));
     }
     public function message(){
-        return view('SalesOfficer.contact');
+        return redirect('SalesOfficer.contact')->with('success','Message has been sent successfully');
     }
     
     public function sent_message(Request $request){

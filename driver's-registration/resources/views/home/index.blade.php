@@ -56,7 +56,7 @@
           <h1 style="font-size: 3rem;">ADIKA TAXI SERVICE</h1>
           <h2 style="font-size: 2rem;">DRIVER'S <span style="color: red">REGISTARTION</span> SITE</h2>
         
-          <button class="main__btn"><a href="{{route('register')}}">Get Started</a></button>
+          <button class="main__btn"><a href="{{route('login')}}">Get Started</a></button>
         </div>
        
       </div>

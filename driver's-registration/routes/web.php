@@ -21,6 +21,7 @@ Route::get('/vechile_type',[SalesController::class,'vechile_type']);
 Route::get('/driver_name',[SalesController::class,'driver_name']);
 Route::post('/sent_message',[SalesController::class,'sent_message']);
 Route::get('/performance_tracking',[SalesController::class,'performance']);
+Route::get('/noresult',[SalesController::class,'noresult']);
 
 
 Route::middleware([

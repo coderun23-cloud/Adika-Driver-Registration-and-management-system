@@ -50,45 +50,15 @@
             <a href="{{url('/records')}}" class="navbar__links">RECORDS</a>
           </li>
           <li class="navbar__item">
-            <a href="{{url('/performance_tracking')}}" class="navbar__links">PERFORMANCE <span style="margin-left: 5px;">TRACKING</span></a>
+            <a href="{{url('/performance_tracking')}}" class="navbar__links">KPI</a>
           </li>
           <li class="navbar__btn"><x-app-layout></x-app-layout></li>
       </div>
     </nav>
-<!--Card section-->
-<!--<div class="main-section">
-    <div class="card-container">
-        <div class="card">
-            <div class="card-content">
-                <h3>Try</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam aspernatur officiis quos. Iure eveniet consequuntur ad impedit! Eligendi culpa molestiae id sed eaque unde nostrum quia eius ex quisquam.</p>
-                <a href="">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="card-container">
-        <div class="card">
-            <div class="card-content">
-                <h3>Try</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam aspernatur officiis quos. Iure eveniet consequuntur ad impedit! Eligendi culpa molestiae id sed eaque unde nostrum quia eius ex quisquam.</p>
-                <a href="">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="card-container">
-        <div class="card">
-            <div class="card-content">
-                <h3>Try</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam aspernatur officiis quos. Iure eveniet consequuntur ad impedit! Eligendi culpa molestiae id sed eaque unde nostrum quia eius ex quisquam.</p>
-                <a href="">Read More</a>
-            </div>
-        </div>
-    </div>
-    
-</div>-->
+
 
 <div class="main-area">
-  <h1 class="h1">TOTAL REGISTERED DRIVERS</h1>
+  <h1 class="h1">SEARCH RESULTS</h1>
 <div class="search">
     
 
