@@ -19,6 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    
 
     <style>
        
@@ -98,6 +99,13 @@ input[type="submit"]:hover {
         font-size: 0.875rem;
     }
 }
+.message{
+  width: 100%;
+  background-color: lightgreen;
+  font-size: 27px;
+  padding: 10px;
+  color: whitesmoke;
+}
     </style>
   
   </head>
@@ -125,14 +133,13 @@ input[type="submit"]:hover {
       </div>
     </nav>
 
-    <div class="alert alert-success alert-dismissible">
-          @if (session()->has('success'))
-      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close" aria-hidden="true"></button>
-      {{ session()->get('success') }}
-     
+  
+    @if(session('success'))
+    <div class="message">
+        {{ session('success') }}
     </div>
+@endif
 
-    @endif
     <!-- Hero Section -->
     <div class="main"  style=" height:75%; background-image: url('https://adikataxi.com/assets/img/others/taxi1.jpg');
     background-position: center;

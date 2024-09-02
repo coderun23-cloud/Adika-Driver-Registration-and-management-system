@@ -90,7 +90,7 @@
     </tr>
     @foreach ($data as $data )
     <tr>
-        <td>{{$data->id}}</td>
+      <td>{{$num++}}</td>
         <td>{{$data->vehicle_name}}</td>
         <td>{{$data->vehicle_type}}</td>
         <td>{{$data->plate_number}}</td>
@@ -102,6 +102,9 @@
     </tr>
     @endforeach
   </table>
+  <div class="center">
+    {{$data->links()}}
+  </div>
 </div>
 </div>
 

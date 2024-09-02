@@ -50,8 +50,8 @@
             <a style="text-transform: capitalize;" href="{{url('/records')}}" class="navbar__links">RECORDS</a>
           </li>
           <li class="navbar__item">
-            <a href="{{url('/performance_tracking')}}" class="navbar__links">KPI</a>
-          </li>
+            <a href="{{route('salesofficer.kpiDashboard')}}" class="navbar__links">KPI</a>
+        </li>
           <li class="navbar__btn"><x-app-layout></x-app-layout></li>
       </div>
     </nav>
@@ -98,13 +98,10 @@
                 </label>
                 <select name="type" id="type">
                     
-                    <option value="Passenger Vehicles">Passenger Vehicles</option>
-                    <option value="Commercial Vehicles">Commercial Vehicles</option>
-                    <option value="Specialized Vehicles">Specialized Vehicles</option>
-                    <option value="Electric and Hybrid Vehicles">Electric and Hybrid Vehicles</option>
-                    <option value="Luxury and Performance Vehicles">Luxury and Performance Vehicles</option>
-                
-                    <option value="Other">Other Vehicles</option>
+                   @foreach ($data as $data )
+                   <option value="{{$data->cat_title}}">{{$data->cat_title}}</option>  
+             
+                   @endforeach
                 
                 </select>
             </div>

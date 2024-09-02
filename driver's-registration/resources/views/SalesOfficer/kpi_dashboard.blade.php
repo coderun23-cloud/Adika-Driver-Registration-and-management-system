@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <base href="/public">
     <!--
       Site created by Brian Design on youtube @ www.youtube.com/channel/UCsKsymTY_4BYR-wytLjex7A?view_as=subscriber
     -->
@@ -8,8 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adika Driver's Registration</title>
     <link rel="stylesheet" href="home/styles.css" />
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
     <link rel="icon" href="https://adikataxi.com/assets/img/favicon.png" sizes="20x20" type="image/png">
     <link
       rel="stylesheet"
@@ -21,19 +20,111 @@
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="sales/record.css">
-  <style>
-    
+<style>
+  /* Container styling */
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+}
 
+/* Header styling */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
 
-  </style>
-  
+h4 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+/* KPI Summary Table */
+.kpi-summary {
+    margin-bottom: 30px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-bordered {
+    border: 1px solid #ddd;
+}
+
+.table-bordered th,
+.table-bordered td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.table-bordered thead {
+    background-color:transparent;
+}
+
+.table-bordered thead th {
+    font-weight: bold;
+}
+
+/* Form Styling */
+.achieve-kpi-form {
+    background-color:transparent;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group input{
+  background-color: transparent;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    color: #000000;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+</style>
+
   </head>
   <body>
     <!-- Navbar Section -->
     <nav class="navbar">
       <div class="navbar__container">
-        <a href="/" id="navbar__logo"><i class="">   <img src="images/logo (1).png" alt=""></i></a>
+     <a href="/" id="navbar__logo"><i class="">   <img src="images/logo (1).png" alt=""></i></a>
         
         <div class="navbar__toggle" id="mobile-menu">
           <span class="bar"></span> <span class="bar"></span>
@@ -44,101 +135,77 @@
             <a href="{{url('/index')}}" class="navbar__links">HOME</a>
           </li>
           <li class="navbar__item">
-            <a  href="{{url('/driver_registration')}}" class="navbar__links">DRIVERREGISTRATION</a>
+            <a  href="{{url('/driver_registration')}}" class="navbar__links">DRIVER <span style="margin-left: 5px;">REGISTRATION</span></a>
           </li>
           <li class="navbar__item">
             <a href="{{url('/records')}}" class="navbar__links">RECORDS</a>
           </li>
           <li class="navbar__item">
-            <a href="{{url('/performance_tracking')}}" class="navbar__links">KPI</a>
-          </li>
+            <a href="{{route('salesofficer.kpiDashboard')}}" class="navbar__links">KPI</a>
+        </li>
           <li class="navbar__btn"><x-app-layout></x-app-layout></li>
       </div>
     </nav>
-<!--Card section-->
-<!--<div class="main-section">
-    <div class="card-container">
-        <div class="card">
-            <div class="card-content">
-                <h3>Try</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam aspernatur officiis quos. Iure eveniet consequuntur ad impedit! Eligendi culpa molestiae id sed eaque unde nostrum quia eius ex quisquam.</p>
-                <a href="">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="card-container">
-        <div class="card">
-            <div class="card-content">
-                <h3>Try</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam aspernatur officiis quos. Iure eveniet consequuntur ad impedit! Eligendi culpa molestiae id sed eaque unde nostrum quia eius ex quisquam.</p>
-                <a href="">Read More</a>
-            </div>
-        </div>
-    </div>
-    <div class="card-container">
-        <div class="card">
-            <div class="card-content">
-                <h3>Try</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi aliquam aspernatur officiis quos. Iure eveniet consequuntur ad impedit! Eligendi culpa molestiae id sed eaque unde nostrum quia eius ex quisquam.</p>
-                <a href="">Read More</a>
-            </div>
-        </div>
-    </div>
-    
-</div>-->
 
-<div class="main-area">
-  <h1 class="h1">TOTAL REGISTERED DRIVERS</h1>
-<div class="search">
-    
+    <!-- Hero Section -->
+    <div class="main" style="background-image: url('https://adikataxi.com/assets/img/others/taxi1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;">
+      
+      <div class="main__container">
+        <div class="main__content">
+        
+            <div class="container">
+                <h2>Performance Dashboard</h2>
+            
+                <div class="kpi-summary">
+                    <h4>Current KPIs</h4>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>KPI Type</th>
+                                <th>Goal</th>
+                                <th>Achieved</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Daily</td>
+                                <td>{{ $dailyKpi->kpi_value ?? 'Not Set' }}</td>
+                                <td>{{ $kpis['daily']->kpi_value ?? 'Not Set' }}</td>
+                            </tr>
 
- 
-  
-    <div class="dropdown">
-        <button onclick="myFunction()" class="dropbtn">Sort By</button>
-        <div id="myDropdown" class="dropdown-content">
-          <a href="{{url('/asc_date')}}">sort date asc</a>
-          <a href="{{url('/vechile_type')}}">sort by plate number</a>
-          <a href="{{url('/driver_name')}}">sort by driver name</a>
+                        
+                        </tbody>
+                    </table>
+                </div>
+            
+                <div class="achieve-kpi-form">
+                    <h4>Register Achieved KPI</h4>
+                    <form action="{{ route('salesofficer.registerAchievedKpi') }}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="registration_date">Date of Registration:</label>
+                            <input type="date" name="registration_date" class="form-control" required>
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="number_of_registrations">Number of Registrations:</label>
+                            <input type="number" name="number_of_registrations" class="form-control" required min="1">
+                        </div>
+            
+                        <button type="submit" class="btn btn-success">Submit Achievement</button>
+                    </form>
+                </div>
+            </div> 
         </div>
+       
       </div>
-
-</div><br>
-
-   
-<div class="table">
-  
-  <table id="customers">
-    <tr>
-      <th>n<span style="text-decoration: underline;">o</span></th>
-      <th>Vehicle Name</th>
-      <th>vehicle Type</th>
-      <th>Plate Number</th>
-      <th>Driver's Name</th>
-      <th>Phone Number</th>
-      <th>Email</th>
-      <th>Gender</th>
-    </tr>
-    @foreach ($data as $data )
-    <tr>
-        <td>{{$data->id}}</td>
-        <td>{{$data->vehicle_name}}</td>
-        <td>{{$data->vehicle_type}}</td>
-        <td>{{$data->plate_number}}</td>
-        <td>{{$data->driver_name}}</td>
-        <td>{{$data->driver_phone_number}}</td>
-        <td>{{$data->driver_email}}</td>
-        <td>{{$data->gender}}</td>
-    </tr>
-    @endforeach
-  </table>
-</div>
-</div>
+    </div>
 
 
-
-
-    <!-- Footer Section -->
     <div class="footer__container">
       <div class="footer__links">
         <div class="footer__link--wrapper">
@@ -151,7 +218,7 @@
           <div class="footer__link--items">
             <h2>Contact Us</h2>
             <a href="/">Contact</a> <a href="/">Contact:7000</a>
-            <a href="/">Address:Bloom Tower, Addis Ababa, Ethiopia</a> <a href="/"> Email:contact@adikataxi.com</a>
+            <a href="/">Address:Bloom Tower, Addis Ababa, Ethiopia</a><a href="/">Email:contact@adikataxi.com</a>
           </div>
         </div>
         <div class="footer__link--wrapper">
@@ -219,26 +286,5 @@
       </section>
     </div>
     <script src="home/script.js"></script>
-    <script>
-        /* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-    </script>
   </body>
 </html>
